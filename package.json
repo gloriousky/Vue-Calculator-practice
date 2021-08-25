@@ -1,15 +1,69 @@
 {
-  "name": "vue-practice",
-  "version": "1.0.0",
-  "main": "npm -v",
+  "name": "vue-test",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "npm -v"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "jquery": "^3.6.0"
+    "@better-scroll/core": "^2.4.1",
+    "axios": "^0.21.1",
+    "better-scroll": "^2.4.1",
+    "bootstrap": "^5.1.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "swiper": "^6.8.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.5.1",
+    "vue-sweetalert2": "^5.0.2"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-router": "^5.0.0-beta.2",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^7.14.0",
+    "lint-staged": "^9.5.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended",
+      "@vue/standard"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }
